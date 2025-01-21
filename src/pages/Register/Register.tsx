@@ -1,7 +1,9 @@
+import { useNavigate } from "react-router";
 import { useAuth } from "../../auth/AuthContext";
 
 export default function Register() {
   const { register } = useAuth();
+  const navigate = useNavigate();
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -10,6 +12,7 @@ export default function Register() {
     const password = formData.get("password") as string;
     try {
       register(email, password);
+      navigate("/");
     } catch (error) {
       alert(error);
     }

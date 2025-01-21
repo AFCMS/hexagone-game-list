@@ -1,6 +1,21 @@
+import { useNavigate } from "react-router";
+import { useAuth } from "../../auth/AuthContext";
+
 export default function Login() {
+  const { login } = useAuth();
+  const navigate = useNavigate();
+
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const formData = new FormData(e.currentTarget);
+    const email = formData.get("email") as string;
+    const password = formData.get("password") as string;
+    try {
+      login(email, password);
+      navigate("/");
+    } catch (error) {
+      alert(error);
+    }
   };
 
   return (
