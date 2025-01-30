@@ -12,7 +12,6 @@ export default function Home() {
             Enjoying your game collection? Comment on all your of your games so
             more people can buy them and then forget to play them!
           </p>
-          <button className="btn btn-primary">Get Started</button>
         </div>
       </div>
     </div>
