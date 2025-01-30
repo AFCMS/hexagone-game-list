@@ -15,7 +15,7 @@ export default function Game() {
 
         return (
           <main className="container mx-auto flex flex-col justify-center items-center">
-            <div className="hero min-h-screen mx-24">
+            <div className="hero mx-24 my-32">
               <div className="hero-content flex-col lg:flex-row-reverse">
                 <img
                   src={`https://steamcdn-a.akamaihd.net/steam/apps/${gameId}/library_600x900_2x.jpg`}
