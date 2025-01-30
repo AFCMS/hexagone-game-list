@@ -26,6 +26,13 @@ export default function Game() {
                     {data[gameId].data.name}
                   </h1>
                   <p className="py-6">{data[gameId].data.short_description}</p>
+                  <div className="flex flex-row gap-2 mb-4">
+                    {data[gameId].data.genres.map((e) => (
+                      <span className="badge badge-soft badge-neutral">
+                        {e.description}
+                      </span>
+                    ))}
+                  </div>
                   <a
                     href={`https://store.steampowered.com/app/${gameId}`}
                     className="btn mr-2"

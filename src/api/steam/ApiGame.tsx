@@ -16,6 +16,7 @@ type ApiSteamGameResponse = {
       developers: string[];
       publishers: string[];
       // Many other fields are available
+      genres: { id: number; description: string }[];
     };
   };
 };
