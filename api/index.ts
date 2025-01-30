@@ -8,7 +8,6 @@ app.use(cors());
 
 app.get("*", async (req, res) => {
   try {
-    // const targetPath = req.originalUrl.replace("/store", "");
     const targetPath = req.query.url ? req.query.url.toString() : undefined;
     if (!targetPath) {
       res.status(400).send("No URL provided");
