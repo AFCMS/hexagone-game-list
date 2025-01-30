@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Link, useSearchParams } from "react-router";
 import ApiSteamGames from "../../api/steam/ApiGames";
 
