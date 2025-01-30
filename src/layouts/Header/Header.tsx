@@ -36,6 +36,9 @@ export default function Header() {
           <input
             name="search"
             type="text"
+            defaultValue={
+              new URLSearchParams(location.search).get("search") ?? ""
+            }
             placeholder="Search Games"
             className="input input-bordered w-24 md:w-auto"
           />
