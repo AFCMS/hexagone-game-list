@@ -28,7 +28,7 @@ interface ApiSteamGameProps {
 export default function ApiSteamGame(props: ApiSteamGameProps) {
   return (
     <ApiFetch<ApiSteamGameResponse>
-      url={`https://store.steampowered.com/api/appdetails?appids=${props.gameid}`}
+      url={`https://store.steampowered.com/api/appdetails?appids=${props.gameid}&language=english`}
       method="GET"
       headers={{
         Accept: "application/json",
