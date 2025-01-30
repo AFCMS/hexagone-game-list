@@ -6,7 +6,7 @@ const app = express();
 
 app.use(cors());
 
-app.get("/", async (req, res) => {
+app.get("*", async (req, res) => {
   try {
     // const targetPath = req.originalUrl.replace("/store", "");
     const targetPath = req.query.url ? req.query.url.toString() : undefined;
@@ -21,10 +21,6 @@ app.get("/", async (req, res) => {
       .status(error.response?.status || 500)
       .send(error.response?.data || "Error proxying request");
   }
-});
-
-app.get("*", (req, res) => {
-  res.status(404).send("Not found");
 });
 
 app.listen(3000, () => console.log("Server ready on port 3000."));
