@@ -1,7 +1,6 @@
-/* eslint-disable @typescript-eslint/no-require-imports */
-const express = require("express");
-const cors = require("cors");
-const axios = require("axios");
+import express from "express";
+import cors from "cors";
+import axios from "axios";
 
 const app = express();
 
@@ -22,6 +21,10 @@ app.get("/", async (req, res) => {
       .status(error.response?.status || 500)
       .send(error.response?.data || "Error proxying request");
   }
+});
+
+app.get("*", (req, res) => {
+  res.status(404).send("Not found");
 });
 
 app.listen(3000, () => console.log("Server ready on port 3000."));
