@@ -9,6 +9,7 @@ Built with:
 - DaisyUI v5
 - Express
 - Vercel
+- Vercel Analytics
 - Icons from SimpleIcons
 - https://github.com/Revadike/InternalSteamWebAPI
 - Libravatar
