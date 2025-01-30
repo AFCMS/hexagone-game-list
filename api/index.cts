@@ -1,6 +1,6 @@
-import express from "express";
-import cors from "cors";
-import axios from "axios";
+const express = require("express");
+const cors = require("cors");
+const axios = require("axios");
 
 const app = express();
 
@@ -25,4 +25,4 @@ app.get("/", async (req, res) => {
 
 app.listen(3000, () => console.log("Server ready on port 3000."));
 
-export default app;
+module.exports = app;
