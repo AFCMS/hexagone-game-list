@@ -1,10 +1,11 @@
-import { NavLink } from "react-router";
+import { NavLink, useNavigate } from "react-router";
 import { useAuth } from "../../auth/AuthContext";
 import sha256 from "../../utils/sha256";
 import { useEffect, useState } from "react";
 
 export default function Header() {
   const { user } = useAuth();
+  const navigate = useNavigate();
 
   const [avatarUrl, setAvatarUrl] = useState<string | undefined>(undefined);
 
@@ -24,11 +25,21 @@ export default function Header() {
         </NavLink>
       </div>
       <div className="flex gap-2">
-        <input
-          type="text"
-          placeholder="Search Games"
-          className="input input-bordered w-24 md:w-auto"
-        />
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            const formData = new FormData(e.target as HTMLFormElement);
+            const searchQuery = formData.get("search") as string;
+            navigate(`/games?search=${encodeURIComponent(searchQuery)}`);
+          }}
+        >
+          <input
+            name="search"
+            type="text"
+            placeholder="Search Games"
+            className="input input-bordered w-24 md:w-auto"
+          />
+        </form>
         <div className="dropdown dropdown-end">
           <div
             tabIndex={0}
