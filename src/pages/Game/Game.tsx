@@ -1,6 +1,7 @@
 import { useParams } from "react-router";
 import ApiSteamGame from "../../api/steam/ApiGame";
 import Unknown404 from "../404/404";
+import Comments from "../../components/Comments";
 
 export default function Game() {
   const { gameId } = useParams();
@@ -13,7 +14,7 @@ export default function Game() {
         }
 
         return (
-          <main className="container mx-auto flex justify-center items-center">
+          <main className="container mx-auto flex flex-col justify-center items-center">
             <div className="hero min-h-screen mx-24">
               <div className="hero-content flex-col lg:flex-row-reverse">
                 <img
@@ -59,6 +60,7 @@ export default function Game() {
                 </div>
               </div>
             </div>
+            <Comments appid={gameId} />
           </main>
         );
       }}
